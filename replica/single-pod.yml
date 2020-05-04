@@ -1,0 +1,14 @@
+apiVersion: v1
+
+kind: Pod
+
+metadata:
+  name: item-api-pod
+  labels: 
+    app: item-api
+
+spec:
+  containers:
+    - name: item-api-proxy
+      image: nginx
+      resources:

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+
+kind: ReplicaSet
+
+metadata:
+  name: item-api-replicaset
+  labels: 
+    app: item-api
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: item-api
+  template:
+    metadata:
+      name: item-api-pod
+      labels: 
+        app: item-api
+    spec:
+      containers:
+        - name: item-api-proxy
+          image: nginx
