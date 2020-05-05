@@ -4,7 +4,7 @@ kind: Deployment
 
 metadata:
   name: item-api-deployment
-  labels: 
+  labels:
     app: item-api
 
 spec:
@@ -15,7 +15,7 @@ spec:
   template:
     metadata:
       name: item-api-pod
-      labels: 
+      labels:
         app: item-api
     spec:
       containers:

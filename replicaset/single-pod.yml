@@ -4,7 +4,7 @@ kind: Pod
 
 metadata:
   name: item-api-pod
-  labels: 
+  labels:
     app: item-api
 
 spec:
