@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: check-deployment
+  labels:
+    app: check
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: check
+  template:
+    metadata:
+      name: check-pod
+      labels:
+        app: check
+    spec:
+      containers:
+        - name: curl
+          image:  curlimages/curl
+          command: ["/bin/sh"]
+          args: ["-c", "while true; do echo '---'; hostname; curl -s -I backend-service; sleep 10; done"]
+          resources:
