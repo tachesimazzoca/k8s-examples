@@ -1,4 +1,4 @@
-# Kubernetes Examples | Rollout
+# Kubernetes Examples | Deployment
 
 ```bash
 $ kubectl get deployments
