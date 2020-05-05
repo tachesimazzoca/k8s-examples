@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: item-api-deployment
+  labels: 
+    app: item-api
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: item-api
+  template:
+    metadata:
+      name: item-api-pod
+      labels: 
+        app: item-api
+    spec:
+      containers:
+        - name: item-api-proxy
+          image: nginx:1.17
+          resources:
